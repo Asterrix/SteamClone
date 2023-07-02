@@ -11,6 +11,7 @@ $container-padding: $base-padding * 2.4;
   position: fixed;
   right: 0;
   top: 0;
+  z-index: 1;
 }
 
 .header-content {
@@ -45,7 +46,7 @@ $container-padding: $base-padding * 2.4;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 999;
 }
 
 .sidebar-wrapper {

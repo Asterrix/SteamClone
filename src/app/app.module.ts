@@ -6,11 +6,17 @@ import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/header/header.component';
 import {NgOptimizedImage} from "@angular/common";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {HomeModuleComponent} from './modules/home-module/home-module.component';
+import {
+  HomeMainSlideshowComponent
+} from "./modules/home-module/components/home-main-slideshow/home-main-slideshow.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeModuleComponent,
+    HomeMainSlideshowComponent
   ],
   imports: [
     BrowserModule,

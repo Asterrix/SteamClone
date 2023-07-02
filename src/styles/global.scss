@@ -11,6 +11,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.6;
   background-color: #c6d4df;
+  background: url("/assets/Steam_Summer_Sale_pattern-04-day_lighter.gif") repeat center top;
 }
 
 html {
@@ -28,4 +29,11 @@ a, a:visited, a:hover {
   text-decoration: none;
   transition: color 0.2s ease-in-out;
   display: flex;
+}
+
+.global-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
