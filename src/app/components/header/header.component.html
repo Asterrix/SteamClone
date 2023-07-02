@@ -1,0 +1,71 @@
+<!-- Mobile Header -->
+<ng-container *ngIf="mobileView; else desktopView">
+  <div class="header header-mobile">
+    <div class="header-wrapper">
+      <div class="header-content">
+        <div class="header-menu" (click)="toggleSidebar()">
+          <img ngSrc="assets/header_menu_hamburger.png" alt="Menu" height="36" width="41"/>
+        </div>
+        <div class="header-logo">
+          <img ngSrc="assets/header_logo.png" alt="Logo" height="36" width="156"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template [ngIf]="sidebarOpen">
+    <div class="sidebar" [@dumbParent]="">
+      <div class="sidebar-wrapper" [@slideRight]="">
+        <div class="sidebar-content">
+          <a routerLink="" class="sidebar-item">Login</a>
+          <a routerLink="" class="sidebar-item">Store</a>
+          <a routerLink="" class="sidebar-item">Community</a>
+          <a routerLink="" class="sidebar-item">Support</a>
+        </div>
+        <div class="sidebar-footer">
+          <div class="sidebar-logo">
+            <img ngSrc="assets/logo_valve_footer.png" alt="Logo" height="26" width="92">
+          </div>
+          <p class="sidebar-copyright">
+            &copy; Valve Corporation. All rights reserved.
+            All trademarks are property of their respective owners in the US and other countries.
+          </p>
+        </div>
+      </div>
+      <div class="sidebar-overlay" (click)="toggleSidebar()"></div>
+    </div>
+  </ng-template>
+</ng-container>
+<!-- End Mobile Header -->
+
+<!-- Desktop Header -->
+<ng-template #desktopView>
+  <div class="header header-desktop">
+    <div class="header-desktop-wrapper">
+      <div class="header-desktop-content">
+        <div class="header-desktop-logo">
+          <a routerLink="">
+            <img ngSrc="assets/header_logo.png" alt="Logo" height="40" width="176"/>
+          </a>
+        </div>
+        <div class="header-desktop-navigation">
+          <a routerLink="" class="header-desktop-navigation-item">Store</a>
+          <a routerLink="" class="header-desktop-navigation-item">Community</a>
+          <a routerLink="" class="header-desktop-navigation-item">About</a>
+          <a routerLink="" class="header-desktop-navigation-item">Support</a>
+        </div>
+      </div>
+      <div class="header-desktop-action-menu">
+        <div class="header-desktop-action-menu-item">
+          <a routerLink="" class="header-desktop-action-item">
+            <img ngSrc="assets/btn_header_installsteam_download.png" alt="Install Icon" height="13" width="15"/>
+            Install Steam
+          </a>
+          <span class="header-desktop-vertical-bar">&vert;</span>
+          <a routerLink="" class="header-desktop-action-login">Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<!-- End Desktop Header -->

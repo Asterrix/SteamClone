@@ -1,18 +1,22 @@
 ﻿*, *:before, *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
-  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #333;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  background-color: #c6d4df;
 }
 
 html {
   font-size: 62.5%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,4 +26,6 @@ h1, h2, h3, h4, h5, h6 {
 a, a:visited, a:hover {
   color: #1976d2;
   text-decoration: none;
+  transition: color 0.2s ease-in-out;
+  display: flex;
 }
