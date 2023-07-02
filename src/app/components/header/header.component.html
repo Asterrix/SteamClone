@@ -1,17 +1,17 @@
 <!-- Mobile Header -->
 <ng-container *ngIf="mobileView; else desktopView">
-  <div class="header header-mobile">
+  <header class="header header-mobile">
     <div class="header-wrapper">
       <div class="header-content">
         <div class="header-menu" (click)="toggleSidebar()">
           <img ngSrc="assets/header_menu_hamburger.png" alt="Menu" height="36" width="41"/>
         </div>
         <div class="header-logo">
-          <img ngSrc="assets/header_logo.png" alt="Logo" height="36" width="156"/>
+          <img ngSrc="assets/header_logo.png" alt="Logo" priority="" height="36" width="156"/>
         </div>
       </div>
     </div>
-  </div>
+  </header>
 
   <ng-template [ngIf]="sidebarOpen">
     <div class="sidebar" [@dumbParent]="">
@@ -24,7 +24,7 @@
         </div>
         <div class="sidebar-footer">
           <div class="sidebar-logo">
-            <img ngSrc="assets/logo_valve_footer.png" alt="Logo" height="26" width="92">
+            <img ngSrc="assets/logo_valve_footer.png" alt="Logo" priority="" height="26" width="92">
           </div>
           <p class="sidebar-copyright">
             &copy; Valve Corporation. All rights reserved.
@@ -40,7 +40,7 @@
 
 <!-- Desktop Header -->
 <ng-template #desktopView>
-  <div class="header header-desktop">
+  <header class="header header-desktop">
     <div class="header-desktop-wrapper">
       <div class="header-desktop-content">
         <div class="header-desktop-logo">
@@ -66,6 +66,6 @@
         </div>
       </div>
     </div>
-  </div>
+  </header>
 </ng-template>
 <!-- End Desktop Header -->
