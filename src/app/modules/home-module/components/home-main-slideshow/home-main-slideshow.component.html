@@ -11,8 +11,8 @@
       </button>
 
       <div class="media-scroller">
-        <div *ngFor="let capsule of capsules.slice(counter, counter + shownCapsules)" class="capsule">
-          <a routerLink="">
+        <div *ngFor="let capsule of items.slice(slideshowPosition, slideshowPosition + shownItems)" class="capsule">
+          <a (mouseenter)="activeItem = capsule.id" (mouseleave)="resetActiveItem()" routerLink="">
             <img [alt]="capsule.alt" [ngSrc]="capsule.imageSrc" height="448" width="374"/>
             <div class="price-container">
               <p class="discount">-20%</p>
@@ -21,13 +21,26 @@
                 <p>$39,99</p>
               </div>
             </div>
+
+            <div [@slideUp]="getHoverInformationState(capsule.id)" class="hover-information">
+              <video autoplay height="100%" loop width="100%">
+                <source src="assets/microtrailer.webm" type="video/webm">
+              </video>
+              <div class="hover-information-container">
+                <h2 class="title">Placeholder</h2>
+                <span class="review">Very Positive</span>
+              </div>
+            </div>
           </a>
         </div>
       </div>
 
-      <div class="carousel-thumbs">
-        <div *ngFor="let _ of capsules.slice(counter, counter + shownCapsules); let i = index"
-             [ngClass]="{'active' : i === activeCapsuleIndex}"></div>
+      <div class="slideshow-indicators">
+        <div (click)="handleSlideshowIndicatorMovement(i)"
+             (mouseenter)="hoveredSlideshowPositionIndex=i"
+             (mouseleave)="hoveredSlideshowPositionIndex=-1"
+             *ngFor="let _ of items.slice(slideshowPosition, slideshowPosition + shownItems); let i = index"
+             [ngClass]="{'active' : i === activeSlideshowPositionIndex, 'hovered': i == hoveredSlideshowPositionIndex}"></div>
       </div>
     </div>
   </div>

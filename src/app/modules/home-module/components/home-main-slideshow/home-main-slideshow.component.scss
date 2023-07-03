@@ -75,6 +75,10 @@
 
 .capsule {
   position: relative;
+
+  @media only screen and (min-width: 1024px) {
+    overflow: hidden;
+  }
 }
 
 .price-container {
@@ -118,7 +122,7 @@
   }
 }
 
-.carousel-thumbs {
+.slideshow-indicators {
   display: none;
   justify-content: center;
 
@@ -140,4 +144,29 @@
 
 .active {
   background-color: hsla(202, 60%, 100%, 0.4) !important;
+}
+
+.hover-information {
+  bottom: 0;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.hover-information-container {
+  background: linear-gradient(315deg, #213C55 5%, #016968 95%);
+  display: flex;
+  flex-direction: column;
+  padding: 1.8rem;
+}
+
+.title {
+  color: white;
+}
+
+.hovered {
+  background-color: #53545A !important;
 }

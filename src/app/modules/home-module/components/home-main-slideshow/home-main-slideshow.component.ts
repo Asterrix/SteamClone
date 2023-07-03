@@ -1,40 +1,70 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {Direction} from "../../enums/direction.enum";
+import {animate, keyframes, state, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'app-home-main-slideshow',
   templateUrl: './home-main-slideshow.component.html',
-  styleUrls: ['./home-main-slideshow.component.scss']
+  styleUrls: ['./home-main-slideshow.component.scss'],
+  animations: [
+    trigger('slideUp', [
+      state('open', style({transform: 'translateY(0)'})),
+      state('closed', style({transform: 'translateY(100%)'})),
+      transition('open => closed', [
+        animate('0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)')
+      ]),
+      transition('closed => open', [
+        animate('0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940)', keyframes([
+          style({transform: 'translateY(100%)', offset: 0}),
+          style({transform: 'translateY(0)', offset: 1})
+        ]))
+      ])
+    ])
+  ]
 })
-export class HomeMainSlideshowComponent implements OnInit{
-  private _counter: number = 0;
-  private _shownCapsules: number = 3;
-  private _activeCapsuleIndex: number = 0;
+export class HomeMainSlideshowComponent implements OnInit {
+  private _slideshowPosition: number = 0;
+  private _activeSlideshowPositionIndex: number = 0;
+  private _hoveredSlideshowPositionIndex: number = -1;
+  private _activeItem: number = -1;
+  private _shownItems: number = 3;
   protected readonly Direction = Direction;
 
-  get counter(): number {
-    return this._counter;
+  get slideshowPosition(): number {
+    return this._slideshowPosition;
   }
 
-  get shownCapsules(): number {
-    return this._shownCapsules;
+  get activeSlideshowPositionIndex(): number {
+    return this._activeSlideshowPositionIndex;
   }
 
-  get activeCapsuleIndex(): number {
-    return this._activeCapsuleIndex;
+  get hoveredSlideshowPositionIndex(): number {
+    return this._hoveredSlideshowPositionIndex;
+  }
+
+  set hoveredSlideshowPositionIndex(value: number) {
+    this._hoveredSlideshowPositionIndex = value;
+  }
+
+  set activeItem(value: number) {
+    this._activeItem = value;
+  }
+
+  get shownItems(): number {
+    return this._shownItems;
   }
 
   /* Test Data */
-  public capsules = [
-    {imageSrc: 'assets/hero_capsule.jpg', alt: 'Capsule 1'},
-    {imageSrc: 'assets/hero_capsule.jpg', alt: 'Capsule 2'},
-    {imageSrc: 'assets/hero_capsule.jpg', alt: 'Capsule 3'},
-    {imageSrc: 'assets/hero_capsule_2.jpg', alt: 'Capsule 4'},
-    {imageSrc: 'assets/hero_capsule_2.jpg', alt: 'Capsule 5'},
-    {imageSrc: 'assets/hero_capsule.jpg', alt: 'Capsule 6'},
-    {imageSrc: 'assets/hero_capsule_2.jpg', alt: 'Capsule 7'},
-    {imageSrc: 'assets/hero_capsule_2.jpg', alt: 'Capsule 8'},
-    {imageSrc: 'assets/hero_capsule_2.jpg', alt: 'Capsule 9'},
+  public items = [
+    {id: 0, imageSrc: 'assets/hero_capsule.jpg', alt: 'Capsule 1'},
+    {id: 1, imageSrc: 'assets/hero_capsule.jpg', alt: 'Capsule 2'},
+    {id: 2, imageSrc: 'assets/hero_capsule.jpg', alt: 'Capsule 3'},
+    {id: 3, imageSrc: 'assets/hero_capsule_2.jpg', alt: 'Capsule 4'},
+    {id: 4, imageSrc: 'assets/hero_capsule_2.jpg', alt: 'Capsule 5'},
+    {id: 5, imageSrc: 'assets/hero_capsule.jpg', alt: 'Capsule 6'},
+    {id: 6, imageSrc: 'assets/hero_capsule_2.jpg', alt: 'Capsule 7'},
+    {id: 7, imageSrc: 'assets/hero_capsule_2.jpg', alt: 'Capsule 8'},
+    {id: 8, imageSrc: 'assets/hero_capsule_2.jpg', alt: 'Capsule 9'},
   ];
 
   ngOnInit(): void {
@@ -42,28 +72,41 @@ export class HomeMainSlideshowComponent implements OnInit{
   }
 
   public handleSlideshowMovement(direction: Direction): void {
-    const lastIndex: number = this.capsules.length - this._shownCapsules;
+    const lastIndex: number = this.items.length - this._shownItems;
 
-    if (direction === Direction.Next) {
-      if (this._counter === lastIndex) {
-        this._counter = 0;
-        this._activeCapsuleIndex = 0;
-      } else {
-        this._counter += this._shownCapsules;
-        this._activeCapsuleIndex += 1;
-      }
-    } else if (direction === Direction.Previous) {
-      if (this._counter === 0) {
-        this._counter = lastIndex;
-        this._activeCapsuleIndex = lastIndex / this._shownCapsules;
-      } else {
-        this._counter -= this._shownCapsules;
-        this._activeCapsuleIndex -= 1;
-      }
+    switch (direction) {
+      case Direction.Next:
+        this._slideshowPosition = (this._slideshowPosition === lastIndex) ? 0 : this._slideshowPosition + this._shownItems;
+        this._activeSlideshowPositionIndex = (this._slideshowPosition === 0) ? 0 : this._activeSlideshowPositionIndex + 1;
+        break;
+      case Direction.Previous:
+        this._slideshowPosition = (this._slideshowPosition === 0) ? lastIndex : this._slideshowPosition - this._shownItems;
+        this._activeSlideshowPositionIndex = (this._slideshowPosition === lastIndex) ? lastIndex / this._shownItems : this._activeSlideshowPositionIndex - 1;
+        break;
     }
   }
 
-  @HostListener('window:resize', ['$event'])
+  public handleSlideshowIndicatorMovement(selectedIndex: number): void {
+    const newPosition: number = selectedIndex * this._shownItems;
+    const totalItems: number = this.items.length;
+
+    if (newPosition >= totalItems) {
+      return
+    }
+
+    this._activeSlideshowPositionIndex = selectedIndex;
+    this._slideshowPosition = newPosition;
+  }
+
+  public resetActiveItem(): void {
+    this._activeItem = -1;
+  }
+
+  public getHoverInformationState(itemId: number): string {
+    return itemId == this._activeItem ? "open" : "closed";
+  }
+
+  @HostListener('window:resize')
   private onResize(): void {
     this.determineComponentState();
   }
@@ -72,19 +115,19 @@ export class HomeMainSlideshowComponent implements OnInit{
     const isMobileScreen: boolean = window.innerWidth < 1024;
 
     if (isMobileScreen) {
-      this.showAllCapsules();
+      this.showAllItems();
     } else if (!isMobileScreen) {
-      this.showLimitedCapsules();
+      this.showLimitedItems();
     }
   }
 
-  private showAllCapsules(): void {
-    this._shownCapsules = this.capsules.length;
+  private showAllItems(): void {
+    this._shownItems = this.items.length;
   }
 
-  private showLimitedCapsules(): void {
-    this._counter = 0;
-    this._shownCapsules = 3;
-    this._activeCapsuleIndex = 0;
+  private showLimitedItems(): void {
+    this._slideshowPosition = 0;
+    this._shownItems = 3;
+    this._activeSlideshowPositionIndex = 0;
   }
 }
