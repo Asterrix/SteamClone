@@ -56,15 +56,60 @@ export class HomeMainSlideshowComponent implements OnInit {
 
   /* Test Data */
   public items = [
-    {id: 0, imageSrc: 'assets/hero_capsule.jpg', alt: 'Capsule 1'},
-    {id: 1, imageSrc: 'assets/hero_capsule.jpg', alt: 'Capsule 2'},
-    {id: 2, imageSrc: 'assets/hero_capsule.jpg', alt: 'Capsule 3'},
-    {id: 3, imageSrc: 'assets/hero_capsule_2.jpg', alt: 'Capsule 4'},
-    {id: 4, imageSrc: 'assets/hero_capsule_2.jpg', alt: 'Capsule 5'},
-    {id: 5, imageSrc: 'assets/hero_capsule.jpg', alt: 'Capsule 6'},
-    {id: 6, imageSrc: 'assets/hero_capsule_2.jpg', alt: 'Capsule 7'},
-    {id: 7, imageSrc: 'assets/hero_capsule_2.jpg', alt: 'Capsule 8'},
-    {id: 8, imageSrc: 'assets/hero_capsule_2.jpg', alt: 'Capsule 9'},
+    {
+      id: 0,
+      imageSrc: 'assets/hero_capsule.jpg',
+      alt: 'Capsule 1',
+      category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
+    },
+    {
+      id: 1,
+      imageSrc: 'assets/hero_capsule.jpg',
+      alt: 'Capsule 2',
+      category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
+    },
+    {
+      id: 2,
+      imageSrc: 'assets/hero_capsule.jpg',
+      alt: 'Capsule 3',
+      category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
+    },
+    {
+      id: 3,
+      imageSrc: 'assets/hero_capsule_2.jpg',
+      alt: 'Capsule 4',
+      category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
+    },
+    {
+      id: 4,
+      imageSrc: 'assets/hero_capsule_2.jpg',
+      alt: 'Capsule 5',
+      category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
+    },
+    {
+      id: 5,
+      imageSrc: 'assets/hero_capsule.jpg',
+      alt: 'Capsule 6',
+      category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
+    },
+    {
+      id: 6,
+      imageSrc: 'assets/hero_capsule_2.jpg',
+      alt: 'Capsule 7',
+      category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
+    },
+    {
+      id: 7,
+      imageSrc: 'assets/hero_capsule_2.jpg',
+      alt: 'Capsule 8',
+      category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
+    },
+    {
+      id: 8,
+      imageSrc: 'assets/hero_capsule_2.jpg',
+      alt: 'Capsule 9',
+      category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
+    },
   ];
 
   ngOnInit(): void {

@@ -23,12 +23,24 @@
             </div>
 
             <div [@slideUp]="getHoverInformationState(capsule.id)" class="hover-information">
-              <video autoplay height="100%" loop width="100%">
+              <video [autoplay]="true" [loop]="true" [muted]="true" height="100%" width="100%">
                 <source src="assets/microtrailer.webm" type="video/webm">
               </video>
               <div class="hover-information-container">
-                <h2 class="title">Placeholder</h2>
-                <span class="review">Very Positive</span>
+                <div class="basic-info">
+                  <h2 class="title">Placeholder</h2>
+                  <span class="review">Very Positive</span>
+                  <div class="category-container">
+                    <p *ngFor="let category of capsule.category" class="category-item">
+                      {{category}}
+                    </p>
+                  </div>
+                </div>
+                <div class="add-to-cart-container">
+                  <button class="add-to-cart-button">
+                    <span>Add to Cart</span>
+                  </button>
+                </div>
               </div>
             </div>
           </a>
