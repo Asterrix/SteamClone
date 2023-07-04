@@ -10,13 +10,17 @@ import {HomeModuleComponent} from './modules/home-module/home-module.component';
 import {
   HomeMainSlideshowComponent
 } from "./modules/home-module/components/home-main-slideshow/home-main-slideshow.component";
+import {
+  HomeFeaturedListComponent
+} from './modules/home-module/components/home-featured-list/home-featured-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeModuleComponent,
-    HomeMainSlideshowComponent
+    HomeMainSlideshowComponent,
+    HomeFeaturedListComponent
   ],
   imports: [
     BrowserModule,

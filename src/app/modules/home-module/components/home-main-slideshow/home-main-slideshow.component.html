@@ -11,9 +11,11 @@
       </button>
 
       <div class="media-scroller">
-        <div *ngFor="let capsule of items.slice(slideshowPosition, slideshowPosition + shownItems)" class="capsule">
-          <a (mouseenter)="activeItem = capsule.id" (mouseleave)="resetActiveItem()" routerLink="">
-            <img [alt]="capsule.alt" [ngSrc]="capsule.imageSrc" height="448" width="374"/>
+        <div *ngFor="let item of items.slice(slideshowPosition, slideshowPosition + shownItems)" class="capsule">
+          <a (mouseenter)="activeItem = item.id" (mouseleave)="resetActiveItem()"
+             (touchend)="resetActiveItem()" (touchstart)="activeItem = item.id"
+             routerLink="">
+            <img [alt]="item.alt" [ngSrc]="item.imageSrc" height="448" width="374"/>
             <div class="price-container">
               <p class="discount">-20%</p>
               <div class="price">
@@ -22,7 +24,7 @@
               </div>
             </div>
 
-            <div [@slideUp]="getHoverInformationState(capsule.id)" class="hover-information">
+            <div [@slideUp]="getHoverInformationState(item.id)" class="hover-information">
               <video [autoplay]="true" [loop]="true" [muted]="true" height="100%" width="100%">
                 <source src="assets/microtrailer.webm" type="video/webm">
               </video>
@@ -31,7 +33,7 @@
                   <h2 class="title">Placeholder</h2>
                   <span class="review">Very Positive</span>
                   <div class="category-container">
-                    <p *ngFor="let category of capsule.category" class="category-item">
+                    <p *ngFor="let category of item.category" class="category-item">
                       {{category}}
                     </p>
                   </div>
