@@ -13,6 +13,9 @@ import {
 import {
   HomeFeaturedListComponent
 } from './modules/home-module/components/home-featured-list/home-featured-list.component';
+import {
+  HomeCategorySlideshowComponent
+} from "./modules/home-module/components/home-category-slideshow/home-category-slideshow.component";
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import {
     HeaderComponent,
     HomeModuleComponent,
     HomeMainSlideshowComponent,
-    HomeFeaturedListComponent
+    HomeFeaturedListComponent,
+    HomeCategorySlideshowComponent
   ],
   imports: [
     BrowserModule,

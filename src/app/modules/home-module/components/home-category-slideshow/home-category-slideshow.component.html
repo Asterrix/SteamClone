@@ -1,0 +1,32 @@
+<div>
+  <div class="global-container">
+    <div class="category-layout">
+      <div class="category-header">
+        <h3>Browse by category</h3>
+      </div>
+      <div class="category-slideshow-container">
+        <button (click)="handleSlideshowMovement(Direction.Previous)" class="control-button left-arrow">
+          <img alt="" height="40" ngSrc="assets/chevron_left.svg" width="32"/>
+        </button>
+        <button (click)="handleSlideshowMovement(Direction.Next)" class="control-button right-arrow">
+          <img alt="" height="40" ngSrc="assets/chevron_right.svg" width="32"/>
+        </button>
+        <div class="category-slideshow">
+          <a *ngFor="let c of items.slice(slideshowPosition, slideshowPosition + shownItems)" class="category-cover">
+            <img [ngSrc]="c.imageSrc" [alt]="c.alt" height="233" width="240"/>
+            <div class="category-cover-content">
+              <span class="category-cover-name">{{c.category}}</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="category-slideshow-indicators">
+        <div (click)="handleSlideshowIndicatorMovement(i)"
+             (mouseenter)="hoveredSlideshowPositionIndex=i"
+             (mouseleave)="hoveredSlideshowPositionIndex=-1"
+             *ngFor="let _ of items.slice(slideshowPosition, slideshowPosition + (items.length / shownItems)); let i = index"
+             [ngClass]="{'active' : i === activeSlideshowPositionIndex, 'hovered': i == hoveredSlideshowPositionIndex}"></div>
+      </div>
+    </div>
+  </div>
+</div>
