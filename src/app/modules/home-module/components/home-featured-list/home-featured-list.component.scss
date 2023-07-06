@@ -25,8 +25,8 @@
     grid-template-rows: 1fr;
     justify-content: space-between;
 
-    .card:nth-child(3) {
-      grid-column: 1/ span 2;
+    app-item-card-small:nth-child(3) {
+      grid-column: 1 / span 2;
     }
 
     @media screen and (min-width: 648px) {
@@ -35,7 +35,7 @@
       justify-content: center;
       padding: 1.2rem;
 
-      .card:nth-child(3) {
+      app-item-card-small:nth-child(3) {
         grid-column: revert;
       }
     }
