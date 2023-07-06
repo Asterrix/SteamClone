@@ -1,5 +1,5 @@
 import {Component, HostListener} from '@angular/core';
-import {Direction} from "../../enums/direction.enum";
+import {Direction} from "../../../../enums/direction.enum";
 
 @Component({
   selector: 'app-home-browse-by-category',

@@ -16,6 +16,11 @@ import {
 import {
   HomeCategorySlideshowComponent
 } from "./modules/home-module/components/home-category-slideshow/home-category-slideshow.component";
+import { HomeDiscountComponent } from './modules/home-module/components/home-discount/home-discount.component';
+import { HomeFeaturedCategoryComponent } from './modules/home-module/components/home-featured-category/home-featured-category.component';
+import { ItemCardSmallComponent } from './components/item-card-small/item-card-small.component';
+import { HomeCategoryItemListComponent } from './modules/home-module/components/home-category-item-list/home-category-item-list.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,12 @@ import {
     HomeModuleComponent,
     HomeMainSlideshowComponent,
     HomeFeaturedListComponent,
-    HomeCategorySlideshowComponent
+    HomeCategorySlideshowComponent,
+    HomeDiscountComponent,
+    HomeFeaturedCategoryComponent,
+    ItemCardSmallComponent,
+    HomeCategoryItemListComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

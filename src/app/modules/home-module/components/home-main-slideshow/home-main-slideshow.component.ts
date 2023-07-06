@@ -1,6 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import {Direction} from "../../enums/direction.enum";
 import {animate, keyframes, state, style, transition, trigger} from "@angular/animations";
+import {Direction} from "../../../../enums/direction.enum";
 
 @Component({
   selector: 'app-home-main-slideshow',

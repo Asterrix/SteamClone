@@ -1,37 +1,100 @@
+/* Variables */
 $base-padding: 1.2rem;
 $container-padding: $base-padding * 2.4;
 
-/* Mobile */
-.header-wrapper {
+.header {
   background-color: #171A21;
   box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.75);
-  left: 0;
   overflow: hidden;
-  padding: $base-padding;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 1;
+
+  &__mobile {
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+    padding: $base-padding;
+  }
+
+  &__desktop {
+    position: relative;
+    justify-content: center;
+    display: grid;
+  }
 }
 
-.header-content {
+.header__container {
+  min-width: 968px;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: min-content min-content min-content;
+  gap: 3.2rem;
+  position: relative;
+  padding: $container-padding;
 }
 
-.header-menu {
+.header__logo {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.header__content {
+  &__mobile {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+
+  &__desktop {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+}
+
+.content__item {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.action__menu {
+  position: absolute;
+  top: 0.5rem;
+  right: 0;
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+
+  &__item {
+    background-color: #5C7E10;
+    padding: 0.2rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+  }
+
+  &__login {
+    color: grey;
+    font-size: 1.2rem;
+    text-transform: lowercase;
+  }
+}
+
+/* Mobile Specific */
+.header__menu {
   align-items: center;
   display: flex;
 
   &:hover {
     cursor: pointer;
   }
-}
-
-.header-logo {
-  align-items: center;
-  display: flex;
-  justify-content: center;
 }
 
 /* Mobile Sidebar Navigation */
@@ -49,7 +112,7 @@ $container-padding: $base-padding * 2.4;
   z-index: 999;
 }
 
-.sidebar-wrapper {
+.sidebar__container {
   background-color: #171A21;
   display: flex;
   flex-direction: column;
@@ -57,12 +120,12 @@ $container-padding: $base-padding * 2.4;
   justify-content: space-between;
 }
 
-.sidebar-content {
+.sidebar__content {
   display: flex;
   flex-direction: column;
 }
 
-.sidebar-item {
+.sidebar__item {
   border-bottom: 1px solid #000000;
   border-top: 1px solid #2F3138;
   color: #BDBDBD;
@@ -71,7 +134,7 @@ $container-padding: $base-padding * 2.4;
   padding: 1.2rem;
 }
 
-.sidebar-footer {
+.sidebar__footer {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
@@ -79,93 +142,12 @@ $container-padding: $base-padding * 2.4;
   padding: 1.2rem;
 }
 
-.sidebar-logo {
+.sidebar__logo {
   display: flex;
 }
 
-.sidebar-copyright {
+.sidebar__copyright {
   color: #8A8A8A;
   font-size: 1rem;
   line-height: 1.2;
-}
-
-/* Desktop */
-.header {
-  background-color: #171D25;
-  display: flex;
-  justify-content: center;
-}
-
-.header-desktop-wrapper {
-  display: flex;
-  justify-content: space-between;
-  max-width: 940px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-
-.header-desktop-content {
-  display: flex;
-  gap: 2rem;
-  padding: $container-padding;
-}
-
-.header-desktop-logo {
-  align-items: center;
-  display: flex;
-}
-
-.header-desktop-navigation {
-  align-items: center;
-  display: flex;
-  gap: 2rem;
-}
-
-.header-desktop-navigation-item {
-  color: #DCDEDF;
-  font-size: 1.6rem;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-.header-desktop-action-menu {
-  display: flex;
-  gap: 1.2rem;
-  margin-top: 5px;
-  padding-right: $container-padding;
-  position: absolute;
-  right: 0;
-}
-
-.header-desktop-action-menu-item {
-  align-items: center;
-  display: flex;
-  gap: 1.2rem;
-}
-
-.header-desktop-action-item {
-  align-items: center;
-  background-color: #5C7E10;
-  color: white;
-  display: inline-flex;
-  font-size: 1rem;
-  gap: 0.8rem;
-  padding: 0.4rem 0.8rem;
-  transition: filter 0.3s;
-  white-space: nowrap;
-
-  &:hover {
-    filter: brightness(110%);
-  }
-}
-
-.header-desktop-action-login {
-  color: white;
-  font-size: 1rem;
-  text-transform: lowercase;
-}
-
-.header-desktop-vertical-bar {
-  color: white;
 }

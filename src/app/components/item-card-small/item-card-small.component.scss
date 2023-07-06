@@ -1,0 +1,70 @@
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__media {
+  display: flex;
+  position: relative;
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  video {
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &:hover {
+    scale: 1.05;
+
+    video {
+      display: flex;
+    }
+
+    img {
+      visibility: hidden;
+    }
+  }
+}
+
+.card__info {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+
+  &--discount {
+    background-color: greenyellow;
+    color: black;
+    font-weight: 600;
+    padding: 0.2rem 0.4rem;
+  }
+
+  &--original-price {
+    color: grey;
+    font-size: 1.4rem;
+    position: relative;
+
+    &::before {
+      background-color: grey;
+      content: "";
+      height: 1px;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%) rotate(-12deg);
+    }
+  }
+
+  &--final-price {
+    color: white;
+    font-size: 1.4rem;
+  }
+}

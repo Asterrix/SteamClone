@@ -1,45 +1,46 @@
-<div class="slideshow-wrapper">
-  <div class="global-container">
+<div class="slideshow__section">
+  <div class="global__container">
     <div class="slideshow">
 
       <!-- Slider Control Buttons -->
-      <button (click)="handleSlideshowMovement(Direction.Previous)" class="control-button left-arrow">
+      <button (click)="handleSlideshowMovement(Direction.Previous)" class="control__button arrow arrow__left">
         <img alt="" height="40" ngSrc="assets/chevron_left.svg" width="32"/>
       </button>
-      <button (click)="handleSlideshowMovement(Direction.Next)" class="control-button right-arrow">
+      <button (click)="handleSlideshowMovement(Direction.Next)" class="control__button arrow arrow__right">
         <img alt="" height="40" ngSrc="assets/chevron_right.svg" width="32"/>
       </button>
 
-      <div class="media-scroller">
-        <div *ngFor="let item of items.slice(slideshowPosition, slideshowPosition + shownItems)" class="capsule">
+      <div class="slideshow__body">
+        <div *ngFor="let item of items.slice(slideshowPosition, slideshowPosition + shownItems)"
+             class="slideshow__capsule">
           <a (mouseenter)="activeItem = item.id" (mouseleave)="resetActiveItem()"
              (touchend)="resetActiveItem()" (touchstart)="activeItem = item.id"
              routerLink="">
             <img [alt]="item.alt" [ngSrc]="item.imageSrc" height="448" width="374"/>
-            <div class="price-container">
-              <p class="discount">-20%</p>
-              <div class="price">
-                <p class="original-price">$49,99</p>
-                <p>$39,99</p>
+            <div class="price">
+              <p class="price--discount">-20%</p>
+              <div class="price__container">
+                <p class="price--original">$49,99</p>
+                <p class="price--final">$39,99</p>
               </div>
             </div>
 
-            <div [@slideUp]="getHoverInformationState(item.id)" class="hover-information">
+            <div [@slideUp]="getHoverInformationState(item.id)" class="detailed__information">
               <video [autoplay]="true" [loop]="true" [muted]="true" height="100%" width="100%">
                 <source src="assets/microtrailer.webm" type="video/webm">
               </video>
-              <div class="hover-information-container">
-                <div class="basic-info">
-                  <h2 class="title">Placeholder</h2>
-                  <span class="review">Very Positive</span>
-                  <div class="category-container">
-                    <p *ngFor="let category of item.category" class="category-item">
+              <div class="detailed__information__content">
+                <div>
+                  <h2 class="detailed__information__content__title">Placeholder</h2>
+                  <span class="detailed__information__content__review">Very Positive</span>
+                  <div class="detailed__information__content__category">
+                    <p *ngFor="let category of item.category" class="detailed__information__content__category-item">
                       {{category}}
                     </p>
                   </div>
                 </div>
-                <div class="add-to-cart-container">
-                  <button class="add-to-cart-button">
+                <div>
+                  <button class="add__to_card__button">
                     <span>Add to Cart</span>
                   </button>
                 </div>
@@ -49,12 +50,13 @@
         </div>
       </div>
 
-      <div class="slideshow-indicators">
+      <div class="slideshow__indicators">
         <div (click)="handleSlideshowIndicatorMovement(i)"
              (mouseenter)="hoveredSlideshowPositionIndex=i"
              (mouseleave)="hoveredSlideshowPositionIndex=-1"
              *ngFor="let _ of items.slice(slideshowPosition, slideshowPosition + shownItems); let i = index"
-             [ngClass]="{'active' : i === activeSlideshowPositionIndex, 'hovered': i == hoveredSlideshowPositionIndex}"></div>
+             [ngClass]="{'slideshow__indicators--active' : i === activeSlideshowPositionIndex,
+             'slideshow__indicators--hovered': i == hoveredSlideshowPositionIndex}"></div>
       </div>
     </div>
   </div>
