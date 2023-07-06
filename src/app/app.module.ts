@@ -21,6 +21,8 @@ import { HomeFeaturedCategoryComponent } from './modules/home-module/components/
 import { ItemCardSmallComponent } from './components/item-card-small/item-card-small.component';
 import { HomeCategoryItemListComponent } from './modules/home-module/components/home-category-item-list/home-category-item-list.component';
 import { FooterComponent } from './components/footer/footer.component';
+import {FormsModule} from "@angular/forms";
+import { HomeHeaderComponent } from './modules/home-module/components/home-header/home-header.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +37,15 @@ import { FooterComponent } from './components/footer/footer.component';
     ItemCardSmallComponent,
     HomeCategoryItemListComponent,
     FooterComponent,
+    HomeHeaderComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    NgOptimizedImage,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        NgOptimizedImage,
+        FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

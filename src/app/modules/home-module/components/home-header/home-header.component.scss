@@ -1,0 +1,141 @@
+.home__header__section {
+  min-height: 720px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.home__header__image {
+  background-image: url("/assets/home_header_bg_day_english.gif");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.home__store__header {
+  align-items: center;
+  background: linear-gradient(90deg, rgba(62, 103, 150, 0.919) 11.38%, rgba(58, 120, 177, 0.8) 25.23%, rgb(15, 33, 110) 100%);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1%;
+  position: relative;
+  width: 968px;
+
+  &__content {
+    display: grid;
+    grid-template-columns: max-content max-content 1fr min-content;
+    width: 100%;
+  }
+
+  &__item {
+    color: white;
+    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
+
+    &:hover {
+      background: linear-gradient(90deg, rgba(33, 162, 255, 0.25) 0%, rgba(33, 162, 255, 0.15) 50%, rgba(50, 50, 51, 0) 100%);
+      text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+.dropdown__menu {
+  background: linear-gradient(90deg, rgba(33, 162, 255, 0.1) 1.89%, rgba(50, 50, 51, 0) 50%), linear-gradient(180deg, #575860 11.6%, #3A4852 54.73%, #2C2D34 100%);
+  box-shadow: 0 0 12px #000000;
+  grid-template-columns: 1fr 3fr 1fr;
+  left: 0;
+  padding: 2.4rem 3.2rem;
+  position: absolute;
+  transition: all 300ms ease-out;
+  visibility: hidden;
+  width: 100%;
+  z-index: 5;
+
+  &__category {
+    color: #2EBFFF;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+  }
+
+  &__container {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  &__layout {
+    display: grid;
+  }
+
+  &__item {
+    border-bottom: 2px solid transparent;
+    color: rgb(228, 227, 227);
+    font-size: 1.4rem;
+    padding: 0.2rem;
+    white-space: nowrap;
+    width: min-content;
+
+    &:hover {
+      border-bottom: 2px solid white;
+      color: white;
+    }
+  }
+}
+
+.visible {
+  visibility: visible;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.search__box {
+  align-items: center;
+  background-color: #316282;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  color: #FFFFFF;
+  display: flex;
+  margin: 0.4rem;
+
+  &:hover {
+    border: 1px solid #4C9ACC;
+  }
+
+  &__form {
+    display: flex;
+    position: relative;
+
+    &__input {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1.4rem;
+      font-weight: 300;
+      margin: 0.4rem;
+      outline: none;
+      padding: 0 1.2rem;
+
+      &::placeholder {
+        color: darkgrey;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+.search {
+  margin-right: 2px;
+  position: absolute;
+  right: 0;
+}

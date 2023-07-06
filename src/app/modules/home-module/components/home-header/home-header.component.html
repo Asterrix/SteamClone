@@ -1,0 +1,98 @@
+<div class="home__header__section">
+  <div class="home__header__image">
+    <div class="home__store__header">
+      <div class="home__store__header__content">
+        <a class="home__store__header__item" routerLink="">Your Store</a>
+        <div>
+          <a (mouseenter)="dropdownMenuActive=true"
+             (mouseleave)="dropdownMenuActive = false"
+             class="home__store__header__item"
+             routerLink="">Categories</a>
+          <div (mouseenter)="dropdownMenuActive=true"
+               (mouseleave)="dropdownMenuActive = false"
+               [ngClass]="{'visible' : dropdownMenuActive}"
+               class="dropdown__menu">
+            <span class="dropdown__menu__category">Genres</span>
+            <div class="dropdown__menu__container">
+              <div class="dropdown__menu__layout">
+                <a class="dropdown__menu__item" routerLink="">Action</a>
+                <a class="dropdown__menu__item" routerLink="">Arcade &amp; Rhythm</a>
+                <a class="dropdown__menu__item" routerLink="">Fighting &amp; Martial Arts</a>
+                <a class="dropdown__menu__item" routerLink="">First-Person Shooter</a>
+                <a class="dropdown__menu__item" routerLink="">Hack &amp; Slash</a>
+                <a class="dropdown__menu__item" routerLink="">Platformer &amp; Runner</a>
+                <a class="dropdown__menu__item" routerLink="">Third-Person Shooter</a>
+                <a class="dropdown__menu__item" routerLink="">shmup</a>
+                <br/>
+                <a class="dropdown__menu__item" routerLink="">Adventure</a>
+                <a class="dropdown__menu__item" routerLink="">Adventure RPG</a>
+                <a class="dropdown__menu__item" routerLink="">Casual</a>
+                <a class="dropdown__menu__item" routerLink="">Hidden Object</a>
+                <a class="dropdown__menu__item" routerLink="">Metroidvania</a>
+                <a class="dropdown__menu__item" routerLink="">Puzzle</a>
+                <a class="dropdown__menu__item" routerLink="">Story-Rich</a>
+                <a class="dropdown__menu__item" routerLink="">Visual Novel</a>
+              </div>
+              <div class="dropdown__menu__layout">
+                <a class="dropdown__menu__item" routerLink="">Role-Playing</a>
+                <a class="dropdown__menu__item" routerLink="">Action RPG</a>
+                <a class="dropdown__menu__item" routerLink="">Adventure RPG</a>
+                <a class="dropdown__menu__item" routerLink="">JRPG</a>
+                <a class="dropdown__menu__item" routerLink="">Party-Based</a>
+                <a class="dropdown__menu__item" routerLink="">Rogue-Like</a>
+                <a class="dropdown__menu__item" routerLink="">Strategy RPG</a>
+                <a class="dropdown__menu__item" routerLink="">Turn-Based</a>
+                <br/>
+                <a class="dropdown__menu__item" routerLink="">Simulation</a>
+                <a class="dropdown__menu__item" routerLink="">Building &amp; Automation</a>
+                <a class="dropdown__menu__item" routerLink="">Dating</a>
+                <a class="dropdown__menu__item" routerLink="">Farming &amp; Crafting</a>
+                <a class="dropdown__menu__item" routerLink="">Hobby &amp; Job</a>
+                <a class="dropdown__menu__item" routerLink="">Life &amp; Immersive</a>
+                <a class="dropdown__menu__item" routerLink="">Sandbox &amp; Physics</a>
+                <a class="dropdown__menu__item" routerLink="">Space &amp; Flight</a>
+              </div>
+              <div class="dropdown__menu__layout">
+                <a class="dropdown__menu__item" routerLink="">Strategy</a>
+                <a class="dropdown__menu__item" routerLink="">Card &amp; Board</a>
+                <a class="dropdown__menu__item" routerLink="">City &amp; Settlement</a>
+                <a class="dropdown__menu__item" routerLink="">Grand &amp; 4X</a>
+                <a class="dropdown__menu__item" routerLink="">Military</a>
+                <a class="dropdown__menu__item" routerLink="">Real-Time Strategy</a>
+                <a class="dropdown__menu__item" routerLink="">Tower Defense</a>
+                <a class="dropdown__menu__item" routerLink="">Turn-Based Strategy</a>
+                <br/>
+                <a class="dropdown__menu__item" routerLink="">Sports &amp; Racing</a>
+                <a class="dropdown__menu__item" routerLink="">All Sports</a>
+                <a class="dropdown__menu__item" routerLink="">Fishing &amp; Hunting</a>
+                <a class="dropdown__menu__item" routerLink="">Individual Sports</a>
+                <a class="dropdown__menu__item" routerLink="">Racing</a>
+                <a class="dropdown__menu__item" routerLink="">Racing Sim</a>
+                <a class="dropdown__menu__item" routerLink="">Sports Sim</a>
+                <a class="dropdown__menu__item" routerLink="">Team Sports</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="spacer"></div>
+        <div class="search__box">
+          <form class="search__box__form">
+            <input class="search__box__form__input" placeholder="search"/>
+            <a (mouseenter)="searchIconHovered=true"
+               (mouseleave)="searchIconHovered=false"
+               class="search"
+               routerLink="">
+              <img *ngIf="!searchIconHovered; else elseBlock"
+                   alt="Search icon"
+                   height="24"
+                   ngSrc="assets/search_icon_btn.png" width="24"/>
+              <ng-template #elseBlock>
+                <img alt="Search icon" height="24" ngSrc="assets/search_icon_btn_over.png" width="24"/>
+              </ng-template>
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
