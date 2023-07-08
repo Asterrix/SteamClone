@@ -27,13 +27,15 @@ import {animate, animateChild, keyframes, query, style, transition, trigger} fro
   ]
 })
 export class HeaderComponent implements OnInit {
-  private _mobileView: boolean = false;
-  private _sidebarOpen: boolean = false;
   private _maxMobileResolution: number = 1024;
+
+  private _mobileView: boolean = false;
 
   get mobileView(): boolean {
     return this._mobileView;
   }
+
+  private _sidebarOpen: boolean = false;
 
   get sidebarOpen(): boolean {
     return this._sidebarOpen;

@@ -1,0 +1,37 @@
+<div>
+  <div class="global__container">
+    <div class="category__layout">
+      <div class="category__header">
+        <h3>Browse by category</h3>
+      </div>
+      <div class="category__body">
+        <!-- Slideshow Controls -->
+        <button (click)="handleSlideshowMovement(Direction.Previous)" class="control__button arrow arrow__left">
+          <img alt="" height="40" ngSrc="assets/chevron_left.svg" width="32"/>
+        </button>
+        <button (click)="handleSlideshowMovement(Direction.Next)" class="control__button arrow arrow__right">
+          <img alt="" height="40" ngSrc="assets/chevron_right.svg" width="32"/>
+        </button>
+
+        <div class="category__slideshow">
+          <a *ngFor="let c of items.slice(slideshowPosition, slideshowPosition + shownItems)"
+             class="category__slideshow__item"
+             routerLink="">
+            <img [alt]="c.alt" [ngSrc]="c.imageSrc" height="233" width="240"/>
+            <div class="category__slideshow__item__content">
+              <span class="category__name">{{c.category}}</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="category__slideshow__indicators">
+        <div (click)="handleSlideshowIndicatorMovement(i)"
+             (mouseenter)="hoveredSlideshowPositionIndex=i"
+             (mouseleave)="hoveredSlideshowPositionIndex=-1"
+             *ngFor="let _ of items.slice(slideshowPosition, slideshowPosition + (items.length / shownItems)); let i = index"
+             [ngClass]="{'category__slideshow__indicators--active' : i === activeSlideshowPositionIndex,
+              'category__slideshow__indicators--hovered': i == hoveredSlideshowPositionIndex}"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,27 +9,27 @@ $container-padding: $base-padding * 2.4;
 
   &__mobile {
     left: 0;
+    padding: $base-padding;
     position: fixed;
     right: 0;
     top: 0;
     z-index: 999;
-    padding: $base-padding;
   }
 
   &__desktop {
-    position: relative;
-    justify-content: center;
     display: grid;
+    justify-content: center;
+    position: relative;
   }
 }
 
 .header__container {
-  min-width: 968px;
   display: grid;
-  grid-template-columns: min-content min-content min-content;
   gap: 3.2rem;
-  position: relative;
+  grid-template-columns: min-content min-content min-content;
+  min-width: 968px;
   padding: $container-padding;
+  position: relative;
 }
 
 .header__logo {
@@ -45,34 +45,34 @@ $container-padding: $base-padding * 2.4;
   }
 
   &__desktop {
+    align-items: center;
     display: flex;
     gap: 2rem;
-    align-items: center;
   }
 }
 
 .content__item {
   color: white;
-  text-transform: uppercase;
   font-weight: 500;
+  text-transform: uppercase;
 }
 
 .action__menu {
-  position: absolute;
-  top: 0.5rem;
-  right: 0;
+  align-items: center;
   display: flex;
   gap: 1.2rem;
-  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0.5rem;
 
   &__item {
-    background-color: #5C7E10;
-    padding: 0.2rem 0.8rem;
-    display: flex;
     align-items: center;
-    gap: 0.8rem;
+    background-color: #5C7E10;
     color: white;
+    display: flex;
     font-size: 1.2rem;
+    gap: 0.8rem;
+    padding: 0.2rem 0.8rem;
     transition: all 0.2s ease;
 
     &:hover {
