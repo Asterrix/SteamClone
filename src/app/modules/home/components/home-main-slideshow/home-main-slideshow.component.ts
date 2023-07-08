@@ -27,55 +27,55 @@ export class HomeMainSlideshowComponent {
   public items = [
     {
       id: 0,
-      imageSrc: 'assets/hero_capsule.jpg',
+      imageSrc: 'https://cdn.akamai.steamstatic.com/steam/apps/1551360/hero_capsule.jpg?t=1688579271',
       alt: 'Capsule 1',
       category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
     },
     {
       id: 1,
-      imageSrc: 'assets/hero_capsule.jpg',
+      imageSrc: 'https://cdn.akamai.steamstatic.com/steam/apps/1551360/hero_capsule.jpg?t=1688579271',
       alt: 'Capsule 2',
       category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
     },
     {
       id: 2,
-      imageSrc: 'assets/hero_capsule.jpg',
+      imageSrc: 'https://cdn.akamai.steamstatic.com/steam/apps/1551360/hero_capsule.jpg?t=1688579271',
       alt: 'Capsule 3',
       category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
     },
     {
       id: 3,
-      imageSrc: 'assets/hero_capsule_2.jpg',
+      imageSrc: 'https://cdn.akamai.steamstatic.com/steam/apps/1245620/hero_capsule.jpg?t=1683618443',
       alt: 'Capsule 4',
       category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
     },
     {
       id: 4,
-      imageSrc: 'assets/hero_capsule_2.jpg',
+      imageSrc: 'https://cdn.akamai.steamstatic.com/steam/apps/1245620/hero_capsule.jpg?t=1683618443',
       alt: 'Capsule 5',
       category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
     },
     {
       id: 5,
-      imageSrc: 'assets/hero_capsule.jpg',
+      imageSrc: 'https://cdn.akamai.steamstatic.com/steam/apps/1551360/hero_capsule.jpg?t=1688579271',
       alt: 'Capsule 6',
       category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
     },
     {
       id: 6,
-      imageSrc: 'assets/hero_capsule_2.jpg',
+      imageSrc: 'https://cdn.akamai.steamstatic.com/steam/apps/1245620/hero_capsule.jpg?t=1683618443',
       alt: 'Capsule 7',
       category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
     },
     {
       id: 7,
-      imageSrc: 'assets/hero_capsule_2.jpg',
+      imageSrc: 'https://cdn.akamai.steamstatic.com/steam/apps/1245620/hero_capsule.jpg?t=1683618443',
       alt: 'Capsule 8',
       category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
     },
     {
       id: 8,
-      imageSrc: 'assets/hero_capsule_2.jpg',
+      imageSrc: 'https://cdn.akamai.steamstatic.com/steam/apps/1245620/hero_capsule.jpg?t=1683618443',
       alt: 'Capsule 9',
       category: ['Action', 'RPG', 'Hunting', 'Adventure', 'Multiplayer']
     },

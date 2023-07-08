@@ -11,49 +11,49 @@ export class HomeCategorySlideshowComponent {
   public items = [
     {
       id: 0,
-      imageSrc: 'assets/visual_novel.png',
+      imageSrc: 'https://store.steampowered.com/categories/homepageimage/category/visual_novel?cc=us&l=english',
       alt: 'Capsule 1',
       category: 'Role-Playing'
     },
     {
       id: 1,
-      imageSrc: 'assets/visual_novel.png',
+      imageSrc: 'https://store.steampowered.com/categories/homepageimage/category/visual_novel?cc=us&l=english',
       alt: 'Capsule 2',
       category: 'Action'
     },
     {
       id: 2,
-      imageSrc: 'assets/visual_novel.png',
+      imageSrc: 'https://store.steampowered.com/categories/homepageimage/category/visual_novel?cc=us&l=english',
       alt: 'Capsule 3',
       category: 'Anime'
     },
     {
       id: 3,
-      imageSrc: 'assets/visual_novel.png',
+      imageSrc: 'https://store.steampowered.com/categories/homepageimage/category/visual_novel?cc=us&l=english',
       alt: 'Capsule 4',
       category: 'Adventure'
     },
     {
       id: 4,
-      imageSrc: 'assets/visual_novel.png',
+      imageSrc: 'https://store.steampowered.com/categories/homepageimage/category/visual_novel?cc=us&l=english',
       alt: 'Capsule 5',
       category: 'Hunting'
     },
     {
       id: 5,
-      imageSrc: 'assets/visual_novel.png',
+      imageSrc: 'https://store.steampowered.com/categories/homepageimage/category/visual_novel?cc=us&l=english',
       alt: 'Capsule 6',
       category: 'Multiplayer'
     },
     {
       id: 6,
-      imageSrc: 'assets/visual_novel.png',
+      imageSrc: 'https://store.steampowered.com/categories/homepageimage/category/visual_novel?cc=us&l=english',
       alt: 'Capsule 7',
       category: 'RPG'
     },
     {
       id: 7,
-      imageSrc: 'assets/visual_novel.png',
+      imageSrc: 'https://store.steampowered.com/categories/homepageimage/category/visual_novel?cc=us&l=english',
       alt: 'Capsule 8',
       category: 'Strategy'
     },
