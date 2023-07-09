@@ -151,3 +151,14 @@ $container-padding: $base-padding * 2.4;
   font-size: 1rem;
   line-height: 1.2;
 }
+
+/* Notice */
+.notice {
+  display: flex;
+  background-color: #ef4444;
+  justify-content: center;
+
+  a {
+    color: white;
+  }
+}

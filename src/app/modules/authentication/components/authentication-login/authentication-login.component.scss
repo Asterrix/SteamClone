@@ -1,0 +1,193 @@
+:host {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  min-height: 100vh;
+}
+
+.authentication {
+  background: radial-gradient(rgba(24, 26, 33, 0) 0%, #181A21 100%) fixed no-repeat, url(https://store.akamai.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg) center top no-repeat, #181A21;
+}
+
+.authentication__content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6.4rem;
+  justify-content: center;
+  margin-top: 60px;
+  padding-bottom: 9.2rem;
+}
+
+.authentication__content__primary {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+
+  @media screen and (min-width: 648px) {
+    text-align: left;
+    width: 632px;
+  }
+}
+
+.authentication__content__primary-label {
+  color: white;
+  font-size: 3.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.authentication__form {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 648px) {
+    background-color: #181A21;
+    padding: 2.4rem;
+  }
+}
+
+.authentication__form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.authentication__form-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.authentication__form-checkbox {
+  align-items: center;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.authentication__form-checkbox-label {
+  color: #AFAFAF;
+  font-size: 1.2rem;
+}
+
+.authentication__form-submit__box {
+  display: flex;
+  justify-content: center;
+
+  @media screen and (min-width: 648px) {
+    align-items: center;
+  }
+}
+
+.authentication__form-submit {
+  background: linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%);
+  border: none;
+  border-radius: 2px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  padding: 12px;
+  text-align: center;
+  width: 100%;
+
+  @media screen and (min-width: 648px) {
+    max-width: 320px;
+  }
+}
+
+.authentication__form-submit:hover {
+  background: linear-gradient(90deg, #06BFFF 30%, #2D73FF 100%);
+}
+
+.authentication__form-checkbox-item {
+  background-color: #32353C;
+  border-radius: 2px;
+  cursor: pointer;
+  height: 2rem;
+  padding: 3px;
+  width: 2rem;
+}
+
+.authentication__form-label {
+  font-size: 1.2rem;
+}
+
+.authentication__form-label--account {
+  color: #1999FF;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.authentication__form-label--password {
+  color: #AFAFAF;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.authentication__form-input {
+  background-color: #32353C;
+  border: 1px solid #32353C;
+  border-radius: 2px;
+  color: #FFFFFF;
+  font-size: 15px;
+  outline: none;
+  padding: 10px;
+}
+
+.footer {
+  background-color: #181A21;
+  display: flex;
+  height: auto;
+  padding: 4.8rem 0;
+}
+
+.footer__content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media screen and (min-width: 648px) {
+    flex-direction: revert;
+    text-align: left;
+  }
+}
+
+.footer__content__section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer__content__section__join {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 2px;
+  color: white;
+  padding: 0.4rem 1.2rem;
+  transition: all 100ms ease-out;
+
+  &:hover{
+    border: 1px solid white;
+  }
+}
+
+.footer__content__section__description {
+  color: #B8B6B4;
+  font-size: 1.4rem;
+}
+
+.footer__content__section__learn-more {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 400;
+}

@@ -1,0 +1,98 @@
+.authentication{
+  background: radial-gradient(30% 40% at 40% 30%, rgba(33, 36, 41, .5) 0%, rgba(33, 36, 41, 0) 100%) no-repeat, url(https://store.akamai.steamstatic.com/public/shared/images/joinsteam/acct_creation_bg.jpg) -25vw 0 no-repeat, #212429;
+  min-height: 100vh;
+}
+
+.authentication__content {
+  display: grid;
+  margin-top: 60px;
+  gap: 2.4rem;
+
+  @media screen and (min-width: 948px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.authentication__content__label {
+  font-size: 3.2rem;
+  color: white;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.authentication__form {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.authentication__form-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.authentication__form__label {
+  font-size: 1.4rem;
+  color: #b8b6b4;
+}
+
+.authentication__form-input {
+  border-radius: 2px;
+  color: #FFFFFF;
+  padding: 10px;
+  background-color: #32353C;
+  outline: none;
+  font-size: 15px;
+  border: 1px solid #32353C;
+}
+
+.authentication__form-submit__box {
+  display: flex;
+
+  @media screen and (min-width: 648px) {
+    align-items: center;
+  }
+}
+
+.authentication__form-submit {
+  background: linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%);
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  padding: 0.8rem;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+
+  @media screen and (min-width: 648px) {
+    max-width: 192px;
+  }
+}
+
+.authentication__form-submit:hover {
+  background: linear-gradient(90deg, #06BFFF 30%, #2D73FF 100%);
+}
+
+select{
+  background: #32353C;
+  border-radius: 3px;
+  color: #E9E9E9;
+  padding: 8px 6px;
+  display: block;
+  box-shadow: none;
+  border: none;
+  width: 100%;
+  transition: border ease-in-out .5s;
+  font-weight: normal;
+}

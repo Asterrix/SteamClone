@@ -49,16 +49,20 @@
         <a class="content__item" routerLink="">Store</a>
         <a class="content__item" routerLink="">Community</a>
         <a class="content__item" routerLink="">About</a>
-        <a class="content__item" routerLink="">Support</a>
+        <a class="content__item" routerLink="notice">Notice</a>
       </div>
       <div class="action__menu">
         <a class="action__menu__item" routerLink="">
           <img alt="Install Steam" height="13" ngSrc="assets/btn_header_installsteam_download.png" width="15"/>
           Install Steam
         </a>
-        <a class="action__menu__login" routerLink="login">Login</a>
+        <a class="action__menu__login" routerLink="authentication/login">Login</a>
       </div>
     </div>
   </header>
+
+  <div class="notice" *ngIf="!isUrlMatch('/notice')">
+    <a routerLink="notice">Read the Notice!</a>
+  </div>
 </ng-template>
 <!-- End Desktop Header -->

@@ -1,5 +1,6 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {animate, animateChild, keyframes, query, style, transition, trigger} from "@angular/animations";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -28,14 +29,16 @@ import {animate, animateChild, keyframes, query, style, transition, trigger} fro
 })
 export class HeaderComponent implements OnInit {
   private _maxMobileResolution: number = 1024;
-
   private _mobileView: boolean = false;
+  private _sidebarOpen: boolean = false;
+
+  constructor(private router: Router) {
+  }
 
   get mobileView(): boolean {
     return this._mobileView;
   }
 
-  private _sidebarOpen: boolean = false;
 
   get sidebarOpen(): boolean {
     return this._sidebarOpen;
@@ -47,6 +50,10 @@ export class HeaderComponent implements OnInit {
 
   public toggleSidebar(): void {
     this._sidebarOpen = !this._sidebarOpen;
+  }
+
+  public isUrlMatch(desiredUrl: string): boolean {
+    return this.router.url === desiredUrl;
   }
 
   @HostListener('window:resize', ['$event'])

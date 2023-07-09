@@ -1,0 +1,26 @@
+.notice {
+  background-color: #181A21;
+  display: grid;
+  grid-template-rows: 1fr;
+  min-height: 100vh;
+}
+
+.notice__content {
+  color: red;
+  display: grid;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 20%;
+  text-align: center;
+
+  @media only screen and (min-width: 1024px) {
+    margin-top: 10%;
+  }
+}
+
+.notice__content__item {
+  align-items: center;
+  display: flex;
+  gap: 0.4rem;
+  justify-content: center;
+}

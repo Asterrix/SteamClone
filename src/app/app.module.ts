@@ -7,19 +7,22 @@ import {FormsModule} from "@angular/forms";
 import {HomeModule} from "./modules/home/home.module";
 import {HeaderModule} from "./components/header/header.module";
 import {AuthenticationModule} from "./modules/authentication/authentication.module";
+import { NoticeComponent } from './modules/notice/notice.component';
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    FormsModule,
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        FormsModule,
 
-    HeaderModule,
-    HomeModule,
-    AuthenticationModule,
-  ],
-  declarations: [AppComponent],
+        HeaderModule,
+        HomeModule,
+        AuthenticationModule,
+        NgOptimizedImage,
+    ],
+  declarations: [AppComponent, NoticeComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
