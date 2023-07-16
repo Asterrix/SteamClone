@@ -5,17 +5,17 @@
 }
 
 body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #333;
-  font-size: 1.6rem;
-  line-height: 1.6;
   background: #C6D4DF url("/assets/Steam_Summer_Sale_pattern-04-day_lighter.gif") repeat center top;
+  color: #333333;
+  font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
-  font-size: 62.5%;
   font-family: 'Poppins', sans-serif;
+  font-size: 62.5%;
   font-weight: 400;
 }
 
@@ -24,15 +24,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a, a:visited, a:hover {
-  color: #1976d2;
+  color: #1976D2;
+  display: flex;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
-  display: flex;
 }
 
 .global__container {
-  width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
+  max-width: 1200px;
   padding: 2rem;
+  width: 100%;
 }

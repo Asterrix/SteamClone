@@ -1,12 +1,13 @@
+
 .home__header__section {
-  min-height: 720px;
+  min-height: 70vh;
   overflow: hidden;
   position: relative;
   width: 100%;
 }
 
 .home__header__image {
-  background-image: url("/assets/home_header_bg_day_english.gif");
+  background-image: url("https://cdn.cloudflare.steamstatic.com/steam/clusters/sale_autumn2019_assets/54b5034d397baccb93181cc6/home_header_bg_night_mobile_english.gif?t=1688069940");
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,6 +16,10 @@
   position: absolute;
   right: 0;
   top: 0;
+
+  @media only screen and (min-width: 768px) {
+    background-image: url("https://cdn.cloudflare.steamstatic.com/steam/clusters/sale_autumn2019_assets/54b5034d397baccb93181cc6/home_header_bg_night_english.gif?t=1688069940");
+  }
 }
 
 .home__store__header {
