@@ -17,7 +17,6 @@
         <div class="sidebar__content">
           <a class="sidebar__item" routerLink="">Login</a>
           <a class="sidebar__item" routerLink="">Store</a>
-          <a class="sidebar__item" routerLink="">Community</a>
           <a class="sidebar__item" routerLink="">Support</a>
         </div>
         <div class="sidebar__footer">
@@ -48,11 +47,10 @@
       <div class="header__content header__content__desktop">
         <a class="content__item" routerLink="">Store</a>
         <a class="content__item" routerLink="">Community</a>
-        <a class="content__item" routerLink="">About</a>
-        <a class="content__item" routerLink="notice">Notice</a>
+        <a class="content__item" routerLink="about">About</a>
       </div>
       <div class="action__menu">
-        <a class="action__menu__item" routerLink="">
+        <a class="action__menu__item" routerLink="about">
           <img alt="Install Steam" height="13" ngSrc="assets/btn_header_installsteam_download.png" width="15"/>
           Install Steam
         </a>
@@ -61,8 +59,8 @@
     </div>
   </header>
 
-  <div class="notice" *ngIf="!isUrlMatch('/notice')">
-    <a routerLink="notice">Read the Notice!</a>
+  <div class="notice" *ngIf="!isUrlMatch('/about')">
+    <a routerLink="about">Read the Notice!</a>
   </div>
 </ng-template>
 <!-- End Desktop Header -->

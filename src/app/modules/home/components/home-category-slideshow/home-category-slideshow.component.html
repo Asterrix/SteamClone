@@ -30,7 +30,7 @@
              (mouseleave)="hoveredSlideshowPositionIndex=-1"
              *ngFor="let _ of items.slice(slideshowPosition, slideshowPosition + (items.length / shownItems)); let i = index"
              [ngClass]="{'category__slideshow__indicators--active' : i === activeSlideshowPositionIndex,
-              'category__slideshow__indicators--hovered': i == hoveredSlideshowPositionIndex}"></div>
+              'category__slideshow__indicators--hovered': i === hoveredSlideshowPositionIndex}"></div>
       </div>
     </div>
   </div>

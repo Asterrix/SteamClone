@@ -1,34 +1,21 @@
-# SteamClone
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
+# Steam Clone
 
 ## Description
-This a version of a SteamClone created in Angular.
+SteamClone is a web application built using Angular, inspired by the popular gaming platform Steam. It aims to provide users with a familiar and engaging gaming experience, showcasing various features similar to the original Steam webpage.
 
-## Development server
+## Requirements
+Node.js version 18.0+
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you
-change any of the source files.
+## Installation Instructions
+To set up the SteamClone application on your local machine, follow these steps:
 
-## Code scaffolding
+1. Clone the repository to your local machine using the following command:
+   `https://github.com/Asterrix/SteamClone.git`
+2. Open the SteamClone folder and navigate to the "ClientApp" folder using the terminal or command prompt:
+   `cd SteamClone/Presentation/ClientApp`
+3. Install the required dependencies by running the following command: `npm install`
 
-Run `ng generate component component-name` to generate a new component. You can also
-use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Running the Application
+Open up the terminal inside the "ClientApp" folder location and type in the following command `npm start`
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a
-package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out
-the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This command will start the development server. After a successful build, you can access the application by opening your web browser and navigating to http://localhost:4200/.

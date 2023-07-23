@@ -14,7 +14,7 @@ const routes: Routes = [
       {path: "register", component: AuthenticationRegisterComponent},
     ]
   },
-  {path: "notice", component: NoticeComponent},
+  {path: "about", component: NoticeComponent},
   {path: "**", redirectTo: "", pathMatch: "full"}
 ];
 
